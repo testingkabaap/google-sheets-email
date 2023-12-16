@@ -1,5 +1,5 @@
 <?php
-
+include('constants.php');
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (isset($_POST["sheet_id"])) {
     if (isset($_POST["name"])) {
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               if ($isMatch) $matchRecords[] = $v;
             }
             if (!empty($matchRecords)) {
-              $html = '<div class="table-responsive mt-5"><table class="table table-hovered table-bordered"><thead><tr><th>Sno</th><th>Name</th><th>Mobile Number</th><th>Reference Number</th><th>Email</th><th>Promotion Link</th><th>Download Link</th><th>Action</th></tr></thead><tbody>';
+              $html = '<div id="email-error-box"></div><div class="table-responsive mt-5"><table class="table table-hovered table-bordered"><thead><tr><th>Sno</th><th>Name</th><th>Mobile Number</th><th>Reference Number</th><th>Email</th><th>Promotion Link</th><th>Download Link</th><th>Action</th></tr></thead><tbody>';
               foreach ($matchRecords as $k => $v) {
                 $html .= '<tr><td>' . ($k + 1) . '</td>';
                 foreach ($v as $v2) $html .= '<td>' . $v2 . '</td>';

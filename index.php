@@ -1,3 +1,4 @@
+<?php include('constants.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,6 +63,31 @@
       var response_container = $("#responseContainer");
       error_box.html("");
       response_container.html("");
+      global_submit_form_data_ajax(url, data, function(output) {
+        try {
+          var res = JSON.parse(output);
+          if (res.status) {
+            globalSetErrorText(error_box, 200, res.message);
+            response_container.html(res.data.html);
+          } else {
+            globalSetErrorText(error_box, 400, res.message);
+          }
+        } catch (e) {
+          globalSetErrorText(error_box, 400, "Some Error " + e);
+        }
+      });
+    });
+
+    $(document).on("click", ".sendPromotionLinkBtn", function() {
+      var thisE = $(this);
+      var to_email = thisE.attr("data-email");
+      var promotion_link = thisE.attr("data-link");
+      var url = "<?php echo BASE_URL . "email.php"; ?>";
+      var data = new FormData();
+      data.append("to_email", to_email);
+      data.append("promotion_link", promotion_link);
+      var error_box = $("#email-error-box");
+      error_box.html("");
       global_submit_form_data_ajax(url, data, function(output) {
         try {
           var res = JSON.parse(output);
