@@ -5,6 +5,9 @@ date_default_timezone_set("Asia/Kolkata");
 $root  = "http://" . $_SERVER['HTTP_HOST'];
 $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 
+defined('BASE_URL') or define('BASE_URL', $root);
+defined('ENVIRONMENT') or define('ENVIRONMENT', "development"); //development/ production
+
 defined('BRAND_NAME') or define('BRAND_NAME', "BRAND NAME");
 defined('FACEBOOK_LINK') or define('FACEBOOK_LINK', "BRAND NAME");
 defined('INSTAGRAM_LINK') or define('INSTAGRAM_LINK', "BRAND NAME");
@@ -18,8 +21,6 @@ defined('SMTP_USERNAME') or define('SMTP_USERNAME', 'info@astrologydivine.com');
 defined('SMTP_PASSWORD') or define('SMTP_PASSWORD', 'DdwvVlZChMLeSkm4%');
 defined('SMTP_PORT') or define('SMTP_PORT', 465);
 
-defined('BASE_URL') or define('BASE_URL', $root);
-defined('ENVIRONMENT') or define('ENVIRONMENT', "development"); //development/ production
 
 if (strtolower(ENVIRONMENT) === "development") {
   error_reporting(-1);
