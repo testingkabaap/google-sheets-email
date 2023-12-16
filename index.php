@@ -93,7 +93,6 @@
           var res = JSON.parse(output);
           if (res.status) {
             globalSetErrorText(error_box, 200, res.message);
-            response_container.html(res.data.html);
           } else {
             globalSetErrorText(error_box, 400, res.message);
           }
