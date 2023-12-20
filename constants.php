@@ -21,6 +21,12 @@ defined('SMTP_USERNAME') or define('SMTP_USERNAME', 'info@astrologydivine.com');
 defined('SMTP_PASSWORD') or define('SMTP_PASSWORD', 'DdwvVlZChMLeSkm4%');
 defined('SMTP_PORT') or define('SMTP_PORT', 465);
 
+/* SHEET COLUMNS INDEX */
+defined('INDEX_invoice_number') or define('INDEX_invoice_number', 2);
+defined('INDEX_invoice_date') or define('INDEX_invoice_date', 3);
+defined('INDEX_destination') or define('INDEX_destination', 7);
+defined('INDEX_external_link') or define('INDEX_external_link', 10);
+
 
 if (strtolower(ENVIRONMENT) === "development") {
   error_reporting(-1);
