@@ -63,10 +63,10 @@
         <div class="modal-body">
           <h5 class="text-center">Enter Email Address</h5>
           <form action="<?php echo BASE_URL . "email.php"; ?>" method="post" id="sendEmailForm" class="form-needs-validation" novalidate>
-            <div class="error-box"></div>
+            <div class="error-box" id="emailErrorBox"></div>
             <input type="hidden" name="promotion_link" id="promotionLinkInput">
             <div class="form-group">
-              <input type="email" name="to_email" placeholder="To Email" class="form-control">
+              <input type="email" name="to_email" placeholder="To Email" id="toEmailInput" class="form-control">
               <div class="invalid-feedback">Enter Receiver Email</div>
             </div>
             <div class="text-center">
@@ -185,6 +185,8 @@
       var thisE = $(this);
       var promotion_link = thisE.attr("data-link");
       $("#promotionLinkInput").val(promotion_link);
+      $("#toEmailInput").val('');
+      $("#emailErrorBox").html('');
       $("#sendEmailModal").modal("show");
     });
     

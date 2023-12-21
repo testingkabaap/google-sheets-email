@@ -12,9 +12,7 @@ $emailTemplate = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN
 <h1 style="text-align: center;"><span style="color:#e74c3c;"><tt><strong>' . BRAND_NAME . '</strong></tt></span></h1>
 
 <div style="max-width: 600px;margin-left: auto;margin-right: auto;background-color: #ffffff;min-height: 100px;box-shadow: 0 0 5px #fe7c04;border-radius: 5px;padding: 10px;">
-<h2 style="text-align: center;"><font face="Arial, Helvetica, sans-serif">PROMOTION LINK</font></h2>
-
-<p style="text-align: center;"><font face="Arial, Helvetica, sans-serif">some text paragraph</font></p>
+<h2 style="text-align: center;"><font face="Arial, Helvetica, sans-serif">Your Consingment</font></h2>
 
 <p style="text-align: center;"><a href="{link}" style="background-color:#fe7c04;font-weight:bold;display:block;width:fit-content;margin-left:auto;margin-right:auto;padding:10px 20px;color:#ffffff;text-decoration:none;border-radius:5px;"><span style="font-family:Arial,Helvetica,sans-serif;">Click to Proceed</span></a></p>
 
@@ -49,7 +47,7 @@ use PHPMailer\PHPMailer\Exception;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (isset($_POST["to_email"])) {
     if (isset($_POST["promotion_link"])) {
-      $subject = isset($_POST['subject']) ? $_POST['subject'] : "Promotion Link";
+      $subject = isset($_POST['subject']) ? $_POST['subject'] : "Your Consingment";
 
       // $email_body = $_POST["promotion_link"];
       $email_body = str_replace("{link}", $_POST['promotion_link'], $emailTemplate);

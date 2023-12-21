@@ -8,10 +8,10 @@ $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAM
 defined('BASE_URL') or define('BASE_URL', $root);
 defined('ENVIRONMENT') or define('ENVIRONMENT', "development"); //development/ production
 
-defined('BRAND_NAME') or define('BRAND_NAME', "BRAND NAME");
-defined('FACEBOOK_LINK') or define('FACEBOOK_LINK', "BRAND NAME");
-defined('INSTAGRAM_LINK') or define('INSTAGRAM_LINK', "BRAND NAME");
-defined('WHATSAPP_LINK') or define('WHATSAPP_LINK', "BRAND NAME");
+defined('BRAND_NAME') or define('BRAND_NAME', "CARGONLINE");
+defined('FACEBOOK_LINK') or define('FACEBOOK_LINK', "");
+defined('INSTAGRAM_LINK') or define('INSTAGRAM_LINK', "");
+defined('WHATSAPP_LINK') or define('WHATSAPP_LINK', "");
 
 
 /* EMAIL CONFIG */
