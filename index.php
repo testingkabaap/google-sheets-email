@@ -19,6 +19,7 @@
     }
 
     .form-container {
+        width:100%;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
@@ -31,7 +32,7 @@
     .form-container .request-form {}
 
     .form-container .request-form label {
-      display: none;
+      /*display: none;*/
     }
 
     .form-control {
@@ -48,6 +49,9 @@
 
     .details-container>img {
       max-width: 180px;
+    }
+    .response-container{
+            word-break: break-word;
     }
   </style>
 </head>
@@ -84,27 +88,27 @@
       <form action="get_data.php" id="requestForm" method="post" class="request-form form-needs-validation" novalidate>
         <div class="error-box"></div>
         <div class="row">
-          <div class="col-12 form-group">
+          <div class="col-12 form-group d-none">
             <label>SpreadSheet ID</label>
-            <input type="text" name="sheet_id" placeholder="Sheet ID" required class="form-control">
+            <input type="text" name="sheet_id" placeholder="Sheet ID" required class="form-control" value="1zxOBOF8sjDMlTfEJmDG6ePfX0cDNkVTbT4qni_XQXJg" title="SpreadSheet ID">
             <div class="invalid-feedback">Enter Spread Sheet ID</div>
           </div>
 
           <div class="col-12 form-group">
             <label>Invoice Number</label>
-            <input type="text" name="invoice_number" placeholder="Invoice Number" required class="form-control">
+            <input type="text" name="invoice_number" placeholder="Invoice Number" required class="form-control" title="Invoice Number" value="QA004FT230000106">
             <div class="invalid-feedback">Enter Invoice Number</div>
           </div>
 
           <div class="col-12 form-group">
             <label>Invoice Date</label>
-            <input type="date" name="invoice_date" placeholder="Invoice Date" required class="form-control">
+            <input type="date" name="invoice_date" placeholder="Invoice Date" required class="form-control" title="Invoice Date" value="2023-07-06">
             <div class="invalid-feedback">Select Invoice Date</div>
           </div>
 
           <div class="col-12 form-group">
             <label>Destination Store</label>
-            <input type="text" name="destination" placeholder="Destination Store" required class="form-control">
+            <input type="text" name="destination" placeholder="Destination Store" required class="form-control" title="Destination Store" value="DM-MainStore">
             <div class="invalid-feedback">Enter Destination Store</div>
           </div>
           <div class="text-center">
